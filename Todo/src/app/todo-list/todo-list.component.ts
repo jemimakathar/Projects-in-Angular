@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';//OnInit --initialize the variable
+import { OnInit } from '@angular/core';       //OnInit --initialize the variable
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -30,12 +30,25 @@ ngOnInit(): void {
     isCompleted:false
   })
 
+  //reset
+
+  form.reset();
+
+
   }
 
 
   onDelete(index:number)
   {
     this.taskArray.splice(index,1);
+  }
+
+  //checkbox
+
+  Onclick(index:number)
+  {
+  console.log( this.taskArray);
+  this.taskArray[index].isCompleted=!this.taskArray[index].isCompleted
   }
 
 

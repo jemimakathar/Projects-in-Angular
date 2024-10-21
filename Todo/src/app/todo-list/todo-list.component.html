@@ -1,14 +1,16 @@
 
 <div class="container">
     <h1>ToDo Login Form</h1>
-    <hr>
-   x <form (ngSubmit)="OnSubmit(taskform)" #taskform="ngForm"> <!--Onsubmit(taskform)---the given id should be inside the method-->
+    <hr> 
+    <form (ngSubmit)="OnSubmit(taskform)" #taskform="ngForm"> <!--Onsubmit(taskform)---the given id should be inside the method-->
         <div class="form-group">
           <label for="task">Task</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter task" ngModel name="task"><!--  ngModel   --two way binding-->
-          <small id="error meassage" class="form-text text-danger">Required Field</small>
-        </div>
-        <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter task" ngModel name="task" required><!--  ngModel   --two way binding-->
+          <small *ngIf="taskform.invalid && taskform.dirty" id="error meassage" class="form-text text-danger">Required Field</small><!-- ng if is used for to satisfy the two condition(1.the form used invalid means the msg is displayed-->
+           
+        </div>                                                                                                                                                                  <!-- 2.The form is unchanged (dirty---false[if the value has not changed]))-->
+        
+        <button  [disabled]="taskform.invalid" type="submit" id="submitButton" class="btn btn-primary">Submit</button>
       </form>
       <hr>
 
@@ -27,7 +29,7 @@
           <tr *ngFor="let t of taskArray,index as i">
            
             <td>{{t.taskName}}</td>
-            <td><input id="mycheckbox"type="checkbox" ></td>
+            <td><input (change)="Onclick(i)" id="mycheckbox"type="checkbox" ></td>
         
             <td><button class="button" (click)="onDelete(i)">Delete</button></td>
           </tr>
