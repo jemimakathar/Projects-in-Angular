@@ -1,6 +1,6 @@
 import { Component,Input } from '@angular/core';
 import { Project } from '../_modles/project';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ProjectModelComponent } from '../project-model/project-model.component';
 @Component({
   selector: 'app-project-card',
@@ -13,10 +13,19 @@ export class ProjectCardComponent {
 
   constructor(private modalService:BsModalService) //this service is provided by bootstrap and functionality is open and close modal
   {
-
   }
   openProjectModel()
   {
-    this.bsModalRef=this.modalService.show(ProjectModelComponent )
+     // In Bootstrap, the modal component is used to create pop-up dialogs that can display content, forms, or alerts.
+    // The ModalOptions interface specifies various properties that can be set to configure a modal instance. By using this interface, you ensure type safety and clarity in your code.
+   
+    const modalOptions:ModalOptions={
+      class:"modal-lg",    //adding additional css 
+      initialState:{
+        projects:this.project       //show the data at initial state -- to share the components between project-card to project-model
+      }
+    };
+    this.bsModalRef=this.modalService.show(ProjectModelComponent,modalOptions)//show() is bulid in method in modalServices
+    
   }
 }

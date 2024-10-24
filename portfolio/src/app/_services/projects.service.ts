@@ -9,12 +9,14 @@ import { Tag } from '../_modles/Tag';
 })
 export class ProjectsService {
   projects: Project[]=[
-    {id:0,name:'Python Project',summary:'This python project analyzes stock market data.',description:"It helps in our Future",projectLink:"//www.github.com",tags:[Tag.PYTHON],pictures:[]},
-    {id:1,name:'Angular Project',summary:'This Angular project analyzes stock market data.',description:"It helps in our Surrounding",projectLink:"//www.github.com",tags:[Tag.ANGULAR],pictures:[] },
-    {id:2,name:'TypeScript App Project',summary:'This Typescript project analyzes stock market data.',description:"It helps in our Daily life",projectLink:"//www.github.com",tags:[Tag.TYPESCRIPT],pictures:[] }
+    {id:0,name:'Python Project',summary:'This python project analyzes stock market data.',description:"It helps in our Future",projectLink:"https://github.com/jemimakathar",tags:[Tag.PYTHON],pictures:["../../assets/certificate.png","../../assets/certificate1.png","../../assets/certificate2.png"]},
+    {id:1,name:'Angular Project',summary:'This Angular project analyzes stock market data.',description:"It helps in our Surrounding",projectLink:"https://github.com/jemimakathar",tags:[Tag.ANGULAR],pictures:["../../assets/certificate.png","../../assets/certificate1.png","../../assets/certificate2.png,"] },
+    {id:2,name:'TypeScript App Project',summary:'This Typescript project analyzes stock market data.',description:"It helps in our Daily life",projectLink:"https://github.com/jemimakathar",tags:[Tag.TYPESCRIPT],pictures:["../../assets/certificate.png","../../assets/certificate1.png","../../assets/certificate2.png"]},
+    {id:3,name:'Java App Project',summary:'This Java project analyzes stock market data.',description:"It helps in our rotuine life",projectLink:"https://github.com/jemimakathar",tags:[Tag.JAVA],pictures:["../../assets/certificate.png","../../assets/certificate1.png","../../assets/certificate2.png"]},
+    {id:3,name:'Nodejs App Project',summary:'This Java project analyzes stock market data.',description:"It helps in our rotuine life",projectLink:"https://github.com/jemimakathar",tags:[Tag.NODEJS],pictures:["../../assets/certificate.png","../../assets/certificate1.png","../../assets/certificate2.png"]},
+    {id:3,name:'Aspnet App Project',summary:'This Java project analyzes stock market data.',description:"It helps in our rotuine life",projectLink:"https://github.com/jemimakathar",tags:[Tag.ASPNET],pictures:["../../assets/certificate.png","../../assets/certificate1.png","../../assets/certificate2.png"] },
   ];
  
-
   constructor() { }
 
   GetProjects()
