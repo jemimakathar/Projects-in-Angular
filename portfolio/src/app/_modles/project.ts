@@ -9,5 +9,6 @@ export interface Project
     projectLink:string;
     pictures:string[];
     tags:Tag[];
+    f_picture:string[]
    
 }

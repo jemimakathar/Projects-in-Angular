@@ -13,6 +13,8 @@ import { ProjectsService } from '../_services/projects.service';
 export class PortfolioComponent implements OnInit{
 
   projects={} as Project[]; //projects:project[]=[]
+
+  isCollapsed:boolean=true;
  
   constructor(public titleService:Title,private projectService:ProjectsService)
   {
@@ -27,6 +29,5 @@ export class PortfolioComponent implements OnInit{
   //   const project=this.projectService.getProjectByid(1);
   //   this.projects=[project];
   
-
-
 }
+
