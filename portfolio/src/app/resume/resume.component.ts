@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-resume',
@@ -6,9 +6,18 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent {
-  constructor(public titleService:Title)
+  constructor(public titleService:Title,private renderer:Renderer2)
   {
     this.titleService.setTitle('jemima-Resume');
+  }
+  DownloadPdf()
+  {
+    const link=this.renderer.createElement('a');
+    link.setAttribute('target','_blank');
+    link.setAttribute('href','../../assets/Resume.pdf');
+    link.setAttribute('download','')
+    link.click();
+    link.remove();
   }
 
 }
